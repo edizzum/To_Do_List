@@ -1,5 +1,5 @@
 use crate::materials::Structs::Item;
-use std::io;
+use std::{io, array};
 
 pub fn add_item(list: &mut Vec<Item>){
     let mut newdata = String::new();
@@ -18,12 +18,14 @@ pub fn delete_item(list: &mut Vec<Item>){
     list.remove(datas);
 }
 
-pub fn complete_item(completed: &mut Vec<Item>){
+pub fn complete_item(completed: &mut Vec<Item>, array: &mut Vec<Item>){
     let mut newd: String = String::new();
     io::stdin().read_line(&mut newd).expect("Failed to read line");
-    let compl = Item{data: newd, completed: true};
-    let x = compl;
-    completed.push(x);
+    let y = &newd;
+    let x: usize = newd.trim().parse().expect("Please enter a valid number");
+    array.remove(x);
+    let compl = Item{data: y.to_string(), completed: true};
+    completed.push(compl);
 }
 
 pub fn todo_list(list: &mut Vec<Item>){

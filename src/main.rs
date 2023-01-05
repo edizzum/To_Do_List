@@ -28,8 +28,7 @@ fn main() {
                 delete_item(&mut array)},
             3 => {
                 println!("Please write the index which you want to mark as completed: ");
-                complete_item(&mut completeditems);
-                delete_item(&mut completeditems)},
+                complete_item(&mut completeditems, &mut array);},
             4 => {
                 println!("To do list: ");
                 todo_list(&mut array)},
