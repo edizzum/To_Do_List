@@ -1,6 +1,6 @@
 pub mod materials;
-use crate::materials::Functions::{self, add_item, delete_item, complete_item, completed_items, todo_list};
-use crate::materials::Structs::Item;
+use crate::materials::functions::{add_item, delete_item, complete_item, completed_items, todo_list};
+use crate::materials::structs::Item;
 use std::io;
 
 fn main() {
